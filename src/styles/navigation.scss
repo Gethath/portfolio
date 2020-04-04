@@ -1,0 +1,133 @@
+@import "vars";
+
+.navigation{
+    align-self: stretch;
+    display: flex;
+    justify-content: center;
+    background-color:$theme-main;
+    border-bottom:5px solid $theme-secondary;
+    @media($tablet){
+        justify-content: flex-start;
+    }
+    @media($desktop){
+        justify-content: space-between;
+    }
+    &__socials{
+    display: none;
+    @media($desktop){
+        display: flex;
+        width: 15%;
+        margin-right: 10px;
+        justify-content: space-around;
+    }}
+    &__social-link{
+        @media($desktop){
+            display: block;
+            margin: 0 auto;
+            &:hover{
+                animation: socials .6s linear forwards;
+            }
+        }
+    }
+    &__social-icon-li{
+        @media($desktop){
+            color: $likedin-color;
+        }
+    }
+    &__social-icon-gh{
+        @media($desktop){
+            color: $github-color;
+        }
+    }
+    &__list{
+        display: flex;
+        justify-content: center;
+        flex-basis: 100%;
+        margin-bottom: 5px;
+        list-style: none;
+        @media($tablet){
+            flex-basis: 60%;
+            margin-bottom: 8px;
+        }
+        @media($desktop){
+            flex-basis: 40%;
+            justify-content: flex-start;
+            margin-bottom: 20px;
+        }
+    }
+    &__item{
+        display: flex;
+        justify-content: space-evenly;
+        flex-basis: 20%;
+    }
+    &__link{
+        position: relative;
+        display: block;
+        padding:5px 6px;
+        margin: 5px;
+        color: #FFF;
+        transition: .4s;
+        text-transform: uppercase;
+        text-decoration: none;
+        text-align: center;
+        font-size: 16px;
+        font-family: $main-font;
+        &:before{
+            position: absolute;
+            width: 0%;
+            content: '';
+            height: 2px;
+            background-color: $theme-secondary;
+            bottom: 1px;
+            left:50%;
+            transform: translateX(-50%);
+            transition: .5s;
+        }
+        &:hover::before{
+            height: 4px;
+            width: 90%;
+        }
+        &--active::before{
+            @media($tablet){
+                height: 3px;
+            }
+            @media($desktop){
+                height: 4px;
+            }
+            width: 70%;
+        }
+        @media($tablet){
+            font-size: 18px;
+            padding:6px 8px;
+        }
+        @media($desktop){
+            font-size: 20px;
+            padding:8px 10px;
+        }
+        &--active{
+            color: #FFF;
+            @media($desktop){letter-spacing: 2px;}
+        }
+        &:hover{
+            color: #FFF;
+            letter-spacing: 2px;
+        }
+    }
+}
+@keyframes socials{
+    0%{
+        transform:  scale(1,1);
+    }
+    25%{
+        transform:  scale(1.2,1.2);
+    }
+    50%{
+        transform:  scale(1.2,1.2);
+    }
+    75%{
+        transform:  scale(1.2,1.2);
+    }
+    100%{
+        transform:  scale(1,1);
+    }
+};

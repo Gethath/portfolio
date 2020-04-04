@@ -1,0 +1,15 @@
+@import"vars";
+
+.slogan{
+    text-transform: uppercase;
+    font-family:$main-font;
+    color: white;
+    font-weight: 600;
+    @media($desktop){
+        font-size: 36px;
+    }
+    &__color{
+        font-weight: 400;
+        color:$text-highlight;
+    }
+}

@@ -1,0 +1,86 @@
+@import "vars";
+
+.App{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 8%;
+    background-color:$theme-main;
+  }
+  section{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-basis: 78%;
+    background-color: #ffffff;
+  }
+  nav{
+    flex-direction: column;
+    display: flex;
+    align-self: stretch;
+    flex-basis: 6%;
+  }
+  .footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $theme-main;
+    border-top: $theme-secondary 5px solid;
+    flex-basis: 8%;
+    &__paragraph{
+      margin-left: 25px;
+      color: #FFF;
+      font-size: 20px;
+    }
+    &__highlight{
+      color:$text-highlight
+    }
+    &__socials{
+      display: flex;
+      flex-basis: 35%;
+      justify-content: space-around;
+      align-items: center;
+      @media($tablet){
+      flex-basis: 20%;
+    }
+      @media ($desktop){
+        flex-basis: 15%;
+      }
+    }
+    &__social-link{
+      display: block;
+      &:hover{
+        animation: socialsFooter .6s linear forwards;
+      }
+    }
+    &__social-icon-li{
+      color: $likedin-color;
+  }
+    &__social-icon-gh{
+      color: $github-color;
+  }
+  }
+}
+@keyframes socialsFooter{
+  0%{
+      transform: scale(1,1);
+  }
+  25%{
+      transform: scale(1.2,1.2);
+  }
+  50%{
+      transform: scale(1.2,1.2);
+  }
+  75%{
+      transform: scale(1.2,1.2);
+  }
+  100%{
+      transform: scale(1,1);
+  }
+};
