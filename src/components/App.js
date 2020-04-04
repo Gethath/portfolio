@@ -15,7 +15,7 @@ function App() {
   const date=new Date().getFullYear();
 
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
     <div className="App">
         <header><Header/></header>
         <nav><Navigation/></nav>
