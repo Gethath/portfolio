@@ -13,23 +13,23 @@ library.add(fab)
 class App extends Component {
 
   state = {
-    width:0,
+    width:1024,
     imgUrl:"",
    }
 componentDidMount() {
   this.updateWindowWidth();
-  this.setImgUrl();
   window.addEventListener("resize", this.updateWindowWidth.bind(this));
   window.addEventListener("resize", this.setImgUrl.bind(this));
 }
 
 componentWillUnmount() {
   window.removeEventListener("resize", this.updateWindowWidth.bind(this));
-  window.removeEventListener("resize", this.setImgUrl.bind(this));
+  window.removeEventListener("resize", this.bind(this));
 }
 
 updateWindowWidth(){
   this.setState({ width: window.innerWidth});
+  this.setImgUrl();
 }
 
 setImgUrl(){
@@ -54,7 +54,7 @@ setImgUrl(){
 
     return (
       <Router basename={process.env.PUBLIC_URL}>
-      <div className="App">
+      <div className="App" >
           <header><Header/></header>
           <nav><Navigation/></nav>
           <section><Section imgUrl={this.state.imgUrl}/></section>
