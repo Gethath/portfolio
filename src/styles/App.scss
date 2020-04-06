@@ -39,7 +39,8 @@
       font-size: 20px;
     }
     &__highlight{
-      color:$text-highlight
+      color:$text-highlight;
+      font-weight: 600;
     }
     &__socials{
       display: flex;
