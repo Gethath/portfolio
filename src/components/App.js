@@ -13,39 +13,37 @@ library.add(fab)
 class App extends Component {
 
   state = {
-    width:1024,
     imgUrl:"",
    }
+
 componentDidMount() {
-  this.updateWindowWidth();
-  window.addEventListener("resize", this.updateWindowWidth.bind(this));
+  this.setImgUrl();
   window.addEventListener("resize", this.setImgUrl.bind(this));
 }
 
+
 componentWillUnmount() {
-  window.removeEventListener("resize", this.updateWindowWidth.bind(this));
-  window.removeEventListener("resize", this.bind(this));
+
+  window.removeEventListener("resize", this.setImgUrl.bind(this));
 }
 
 updateWindowWidth(){
   this.setState({ width: window.innerWidth});
-  this.setImgUrl();
 }
 
 setImgUrl(){
-  if (this.state.width<370){
+  if (window.innerWidth<370){
     this.setState({
       imgUrl:`${require('../img/img-mobile-mini.jpg')}`})}
-    else if (this.state.width>370&&this.state.width<760){
+    else if (window.innerWidth>370&&window.innerWidth<760){
       this.setState({
        imgUrl:`${require('../img/img-mobile.jpg')}`})}
-    else if (this.state.width>760&&this.state.width<1024){
+    else if (window.innerWidth>760&&window.innerWidth<1024){
       this.setState({
          imgUrl:`${require('../img/img-tablet.jpg')}`})}
    else{
      this.setState({
        imgUrl:`${require('../img/img-desktop.jpg')}`})}
-
 }
 
 

@@ -30,7 +30,7 @@
             content: '';
             height: 4px;
             background-color: $theme-secondary;
-            bottom: 5px;
+            bottom: -5px;
             left:50%;
             transform: translateX(-50%);
             transition: .5s;
