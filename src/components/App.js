@@ -59,7 +59,7 @@ setImgUrl(){
           <footer className="footer"><p className="footer__paragraph">By Daniel Kosk <span className="footer__highlight">{date}©</span></p>
           <div className="footer__socials">
           <a href="https://www.linkedin.com/in/daniel-kosk-8269b91a5/" target="_blank" rel="noopener noreferrer" className="footer__social-link"> <FontAwesomeIcon className="footer__social-icon-li" icon={['fab', 'linkedin']} size="2x"/></a>
-          <a href="https://github.com/Gethath" target="_blank" rel="noopener noreferrer" className="footer__social-link"><FontAwesomeIcon className="footer__social-icon-gh " icon={['fab', 'react']} size="2x"/></a>
+          <a href="https://github.com/Gethath" target="_blank" rel="noopener noreferrer" className="footer__social-link"><FontAwesomeIcon className="footer__social-icon-gh " icon={['fab', 'github']} size="2x"/></a>
            </div></footer>
       </div>
       </Router>
